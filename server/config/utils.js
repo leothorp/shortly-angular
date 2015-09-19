@@ -20,6 +20,10 @@ module.exports = {
   },
 
   isValidUrl: function(url) {
+    console.log('the url is: ', url); 
+    if(url === undefined){
+      return false; 
+    }
     return url.match(rValidUrl);
   }
 };
