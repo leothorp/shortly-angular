@@ -12,8 +12,11 @@ angular.module('shortly.links', [])
     //$http.get('/api/links')
   };
   $scope.signout = function() {
-     Auth.signout();
+    Auth.signout();
   }; 
   $scope.getLinks();
 });
+
+
+
 

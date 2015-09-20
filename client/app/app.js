@@ -64,4 +64,25 @@ angular.module('shortly', [
       $location.path('/signin');
     }
   });
+})
+
+.directive('shLink', function() {
+  return {
+    restrict: 'EA',
+    template: "<div><img src='../assets/redirect_icon.png'/><div class='visits'>\
+    <span class='count'>{{source.visits}}</span>Visits</div><div class='title'>{{source.title}}</div>\
+    <div class='original'>{{source.url}}</div><a href='{{source.base_url}}/api/links/{{source.code}}'>\
+    {{source.code}}</a></div>",
+    replace: true,
+    scope: {
+      source: '=',
+      other: '='
+    },
+    link: function(scope,elem,attr){ 
+      console.log("link function----"); 
+      console.log(scope);
+      console.log(elem);
+      console.log(attr); 
+    }
+  };
 });
